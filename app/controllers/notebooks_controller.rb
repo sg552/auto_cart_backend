@@ -82,13 +82,12 @@ class NotebooksController < ApplicationController
   end
 
   def available_notebooks
-    book1 = Notebook.create(:name => 'http://outlet.lenovo.com/SEUILibrary/controller/e/outlet_us/LenovoPortal/en_US/config.workflow:ConfigureMtmAsItem?mtm-item=:000001BD:00012BF5:&action=addtocart')
-    book2 = Notebook.create(:name => 'http://outlet.lenovo.com/SEUILibrary/controller/e/outlet_us/LenovoPortal/en_US/config.workflow:ConfigureMtmAsItem?mtm-item=:000001BD:00017117:&action=addtocart')
-    render :json =>{ :result =>  [
-        { :url => book1.name },
-        { :url => book2.name }
-      ]
+    render :json =>{
+      :result => Notebook.all.map {  |notebook|
+        {
+          :url =>  notebook.name
+        }
+      }
     }
-
   end
 end
