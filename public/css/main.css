@@ -1,0 +1,21 @@
+.main{width: 900px; height: auto; min-height: 600px; margin-left:auto; margin-right: auto}
+h1{text-align: center}
+.callout{border: 1px solid #e5e5e5; padding: 20px; border-radius: 5px; border-left: 5px solid #3071a9; margin-top: 20px; overflow: auto; zoom:1;}
+.callout h4,.callout h5{color: #3071a9;}
+.laptopType{list-style: none; margin: -20px 0px 0px -20px; padding: 0px; height: auto; }
+.laptopType li{display: block; width: 270px; height:auto; float: left; margin: 20px 0px 0px 20px; border:1px solid #e5e5e5; border-radius: 5px;}
+/*定义关注机型*/
+.up{width:268px; height: 49px; padding: 0px 10px; float: left; line-height: 49px; text-align: center; font-size: 16px; text-align:center; font-weight: bold; color: #3071a9; background: #f7f7f7;border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom: 1px solid #e5e5e5}
+.middle{width: 178px; height:auto; padding: 10px; float: left;}
+.down{width:268px; height: 39px; float: left; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; background: #f7f7f7; border-top: 1px solid #e5e5e5}
+.middle div{width: 248px; height: 45px; line-height: 45px; float: left;}
+.down div{width: 89px; height: 39px; float: left; text-align: center;}
+.down button{margin-top:8px}
+
+.add{width: 270px; height:333px; float: left; line-height: 338px; text-align: center;}
+.up input{ margin-top: 8px}
+
+.saveConfig{margin-top: 20px}
+.saveConfig button{ margin-left: auto; margin-right: auto}
+
+.switch{clear: both;}

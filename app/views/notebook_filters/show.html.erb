@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cpu:</b>
+  <%= @notebook_filter.cpu %>
+</p>
+
+<p>
+  <b>Harddisk:</b>
+  <%= @notebook_filter.harddisk %>
+</p>
+
+<p>
+  <b>Screen:</b>
+  <%= @notebook_filter.screen %>
+</p>
+
+<p>
+  <b>Keyword:</b>
+  <%= @notebook_filter.keyword %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @notebook_filter.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_notebook_filter_path(@notebook_filter) %> |
+<%= link_to 'Back', notebook_filters_path %>

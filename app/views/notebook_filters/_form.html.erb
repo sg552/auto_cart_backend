@@ -1,0 +1,37 @@
+<%= form_for(@notebook_filter) do |f| %>
+  <% if @notebook_filter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notebook_filter.errors.count, "error") %> prohibited this notebook_filter from being saved:</h2>
+
+      <ul>
+      <% @notebook_filter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpu %><br />
+    <%= f.text_field :cpu %>
+  </div>
+  <div class="field">
+    <%= f.label :harddisk %><br />
+    <%= f.text_field :harddisk %>
+  </div>
+  <div class="field">
+    <%= f.label :screen %><br />
+    <%= f.text_field :screen %>
+  </div>
+  <div class="field">
+    <%= f.label :keyword %><br />
+    <%= f.text_field :keyword %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

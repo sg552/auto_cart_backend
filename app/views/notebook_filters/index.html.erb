@@ -1,0 +1,191 @@
+<h1>Listing notebook_filters</h1>
+
+<table>
+  <tr>
+    <th>Cpu</th>
+    <th>Harddisk</th>
+    <th>Screen</th>
+    <th>Keyword</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @notebook_filters.each do |notebook_filter| %>
+  <tr>
+    <td><%= notebook_filter.cpu %></td>
+    <td><%= notebook_filter.harddisk %></td>
+    <td><%= notebook_filter.screen %></td>
+    <td><%= notebook_filter.keyword %></td>
+    <td><%= notebook_filter.price %></td>
+    <td><%= link_to 'Show', notebook_filter %></td>
+    <td><%= link_to 'Edit', edit_notebook_filter_path(notebook_filter) %></td>
+    <td><%= link_to 'Destroy', notebook_filter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Notebook filter', new_notebook_filter_path %>
+    <h1>配置页面</h1>
+    <div class="callout">
+      <h4>状况（全局配置）：</h4>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="new" checked>全新</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="refurbuished" checked>翻新</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="dent">破损</label>
+    </div>
+    <div class="callout">
+      <h4>PN类型（全局配置）：</h4>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="new">长码</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="refurbuished">短码</label>
+    </div>
+
+    <div class="callout">
+      <h4>目标机型：</h4>
+      <ul class="laptopType">
+        <li>
+          <div class="up">T440p</div>
+          <div class="middle">
+            <div>cpu:I5&I7</div>
+            <div>硬盘:不限</div>
+            <div>屏幕:1024&2048</div>
+            <div>关键字:ips</div>
+            <div>价格范围:0-900</div>
+          </div>
+          <div class="down">
+            <div>
+              <button type="button" class="btn btn-warning btn-xs" id="activeTogle">
+                <span class="glyphicon glyphicon-ban-circle"></span>
+                关闭
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-info btn-xs">
+                <span class="glyphicon glyphicon-edit"></span>
+                编辑
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove"></span>
+                删除
+              </button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="up">x230</div>
+          <div class="middle">
+            <div>cpu:I7</div>
+            <div>硬盘:不限</div>
+            <div>屏幕:1024&2048</div>
+            <div>关键字:ips</div>
+            <div>价格范围:0-900</div>
+          </div>
+          <div class="down">
+            <div>
+              <button type="button" class="btn btn-warning btn-xs">
+                <span class="glyphicon glyphicon-ban-circle"></span>
+                关闭
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-info btn-xs">
+                <span class="glyphicon glyphicon-edit"></span>
+                编辑
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove"></span>
+                删除
+              </button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="up">T440</div>
+          <div class="middle">
+            <div>cpu:I5&I7</div>
+            <div>硬盘:不限</div>
+            <div>屏幕:1024&2048</div>
+            <div>关键字:ips</div>
+            <div>价格范围:0-900</div>
+          </div>
+          <div class="down">
+            <div>
+              <button type="button" class="btn btn-warning btn-xs">
+                <span class="glyphicon glyphicon-edit"></span>
+                关闭
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-info btn-xs">
+                <span class="glyphicon glyphicon-edit"></span>
+                编辑
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove"></span>
+                删除
+              </button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="add">
+            <div>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-plus"></span>
+                添加目标机型
+              </button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="up">
+            <input class="form-control" type="text" placeholder="机型关键字"></div>
+          <div class="middle">
+            <div>
+              <input class="form-control" type="text" placeholder="cpu关键字"></div>
+            <div>
+              <input class="form-control" type="text" placeholder="硬盘关键字"></div>
+            <div>
+              <input class="form-control" type="text" placeholder="屏幕关键字"></div>
+            <div>
+              <input class="form-control" type="text" placeholder="附加关键字"></div>
+            <div>
+              <input class="form-control" type="text" placeholder=""></div>
+          </div>
+          <div class="down">
+            <div>
+              <button class="btn btn-primary btn-xs">
+                <span class="glyphicon glyphicon-save"></span>
+                保存
+              </button>
+            </div>
+            <div></div>
+            <div>
+              <button class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-remove"></span>
+                取消
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="callout">
+      <h4>加入购物车的数量：</h4>
+      <input class="form-control" type="text"></div>
+    <div class="saveConfig">
+      <button class="btn btn-primary btn-lg">保存配置文件</button>
+    </div>
