@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class NotebookFiltersController < ApplicationController
   before_filter :get_by_id, :only => [:show, :edit, :update, :destroy]
   def index

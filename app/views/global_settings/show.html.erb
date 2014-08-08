@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @global_setting.name %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @global_setting.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_global_setting_path(@global_setting) %> |
+<%= link_to 'Back', global_settings_path %>

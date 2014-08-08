@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateNotebookFilters < ActiveRecord::Migration
   def change
     create_table :notebook_filters do |t|

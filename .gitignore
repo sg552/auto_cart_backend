@@ -36,3 +36,6 @@ public/files/*
 config/log4r.yml
 *.zip
 nohup.out
+config/thin.yml
+app/assets
+test
