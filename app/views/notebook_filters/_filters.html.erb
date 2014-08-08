@@ -1,0 +1,129 @@
+<ul class="laptopType">
+  <% @notebook_filters.each do |notebook_filter| %>
+  <li>
+    <div class="up"><%= notebook_filter.name %></div>
+    <div class="middle">
+      <div>CPU: <%= notebook_filter.cpu %> </div>
+      <div>硬盘:<%= notebook_filter.harddisk %></div>
+      <div>屏幕:<%= notebook_filter.screen %></div>
+      <div>关键字: <%= notebook_filter.keyword %></div>
+      <div>价格范围: <%= notebook_filter.price %></div>
+    </div>
+    <div class="down">
+      <div>
+        <button type="button" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-edit"></span>
+          <%= link_to '编辑', edit_notebook_filter_path(notebook_filter) %>
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-danger btn-xs">
+          <span class="glyphicon glyphicon-remove"></span>
+          删除
+        </button>
+      </div>
+    </div>
+  </li>
+  <% end %>
+  <li>
+    <div class="up">x230</div>
+    <div class="middle">
+      <div>cpu:I7</div>
+      <div>硬盘:不限</div>
+      <div>屏幕:1024&2048</div>
+      <div>关键字:ips</div>
+      <div>价格范围:0-900</div>
+    </div>
+    <div class="down">
+      <div>
+        <button type="button" class="btn btn-warning btn-xs">
+          <span class="glyphicon glyphicon-ban-circle"></span>
+          关闭
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-edit"></span>
+          编辑
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-danger btn-xs">
+          <span class="glyphicon glyphicon-remove"></span>
+          删除
+        </button>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="up">T440</div>
+    <div class="middle">
+      <div>cpu:I5&I7</div>
+      <div>硬盘:不限</div>
+      <div>屏幕:1024&2048</div>
+      <div>关键字:ips</div>
+      <div>价格范围:0-900</div>
+    </div>
+    <div class="down">
+      <div>
+        <button type="button" class="btn btn-warning btn-xs">
+          <span class="glyphicon glyphicon-edit"></span>
+          关闭
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-edit"></span>
+          编辑
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-danger btn-xs">
+          <span class="glyphicon glyphicon-remove"></span>
+          删除
+        </button>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="add">
+      <div>
+        <button type="button" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-plus"></span>
+          添加目标机型
+        </button>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="up">
+      <input class="form-control" type="text" placeholder="机型关键字"></div>
+    <div class="middle">
+      <div>
+        <input class="form-control" type="text" placeholder="cpu关键字"></div>
+      <div>
+        <input class="form-control" type="text" placeholder="硬盘关键字"></div>
+      <div>
+        <input class="form-control" type="text" placeholder="屏幕关键字"></div>
+      <div>
+        <input class="form-control" type="text" placeholder="附加关键字"></div>
+      <div>
+        <input class="form-control" type="text" placeholder=""></div>
+    </div>
+    <div class="down">
+      <div>
+        <button class="btn btn-primary btn-xs">
+          <span class="glyphicon glyphicon-save"></span>
+          保存
+        </button>
+      </div>
+      <div></div>
+      <div>
+        <button class="btn btn-default btn-xs">
+          <span class="glyphicon glyphicon-remove"></span>
+          取消
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>
