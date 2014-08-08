@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class NotebooksController < ApplicationController
   # GET /notebooks
   # GET /notebooks.json
