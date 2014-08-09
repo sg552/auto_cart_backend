@@ -1,20 +1,35 @@
-<%= link_to 'New Notebook filter', new_notebook_filter_path %>
+<%= form_tag '/global_settings/update_global_config', :method => :put do |f| %>
     <h1>配置页面</h1>
     <div class="callout">
       <h4>状况（全局配置）：</h4>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="new" checked>全新</label>
+        <%= check_box_tag 'quality_type[]' , GlobalSetting::QUALITY_TYPE_NEW,
+          @quality_setting.contain?(GlobalSetting::QUALITY_TYPE_NEW) %>
+        全新
+      </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="refurbuished" checked>翻新</label>
+        <%= check_box_tag 'quality_type[]' , GlobalSetting::QUALITY_TYPE_RETREADED ,
+          @quality_setting.contain?(GlobalSetting::QUALITY_TYPE_RETREADED) %>
+        翻新
+      </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="dent">破损</label>
+        <%= check_box_tag 'quality_type[]' , GlobalSetting::QUALITY_TYPE_BROKEN ,
+          @quality_setting.contain?(GlobalSetting::QUALITY_TYPE_BROKEN) %>
+        破损
+      </label>
     </div>
     <div class="callout">
       <h4>PN类型（全局配置）：</h4>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="new">长码</label>
+        <%= check_box_tag 'pn_type[]' , GlobalSetting::PN_TYPE_LONG,
+          @pn_setting.contain?(GlobalSetting::PN_TYPE_LONG) %>
+        长码
+      </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="refurbuished">短码</label>
+        <%= check_box_tag 'pn_type[]' , GlobalSetting::PN_TYPE_SHORT ,
+          @pn_setting.contain?(GlobalSetting::PN_TYPE_SHORT) %>
+        短码
+      </label>
     </div>
 
     <div class="callout">
@@ -23,7 +38,8 @@
     </div>
     <div class="callout">
       <h4>加入购物车的数量：</h4>
-      <input class="form-control" type="text"></div>
+      <%= select_tag :count_to_buy , options_for_select(1..30, @count_to_buy_setting.value) %>
     <div class="saveConfig">
-      <button class="btn btn-primary btn-lg">保存配置文件</button>
+      <button class="btn btn-primary btn-lg" onclick = 'form.submit()'>保存配置文件</button>
     </div>
+<% end %>

@@ -3,6 +3,9 @@ class NotebookFiltersController < ApplicationController
   before_filter :get_by_id, :only => [:show, :edit, :update, :destroy]
   def index
     @notebook_filters = NotebookFilter.all
+    @pn_setting = GlobalSetting.where('name = ?', 'pn_type').first
+    @quality_setting = GlobalSetting.where('name = ?', 'quality_type').first
+    @count_to_buy_setting = GlobalSetting.where('name = ?', 'count_to_buy').first
   end
 
   def show
