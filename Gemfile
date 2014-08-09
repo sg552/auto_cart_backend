@@ -11,3 +11,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails', '3.1.1'
+group :development, :test do
+  gem 'capistrano', '2.12.0'
+  gem 'capistrano-rbenv', '1.0.1'
+end
