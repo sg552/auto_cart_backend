@@ -1,6 +1,18 @@
 # -*- encoding : utf-8 -*-
 class NotebookFiltersController < ApplicationController
   before_filter :get_by_id, :only => [:show, :edit, :update, :destroy]
+
+  def read_complete_content
+    html_content = params[:html_content]
+
+    File.open 'tmp/result', 'w' do |file|
+      file.write html_content
+    end
+    ParseHelper.parse(html_content)
+
+    render :json => {:result => 'success', :size => html_content.size }
+  end
+
   def index
     @notebook_filters = NotebookFilter.all
     @pn_setting = GlobalSetting.where('name = ?', 'pn_type').first

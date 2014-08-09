@@ -13,6 +13,8 @@ module AutoCartBackend
 
     config.filter_parameters += [:password]
 
+    config.autoload_paths += %W(#{config.root}/lib)
+
     config.active_support.escape_html_entities_in_json = true
 
     config.active_record.whitelist_attributes = true

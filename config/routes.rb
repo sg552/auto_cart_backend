@@ -7,7 +7,11 @@ AutoCartBackend::Application.routes.draw do
       put :update_global_config
     end
   end
-  resources :notebook_filters
+  resources :notebook_filters do
+    collection do
+      post :read_complete_content
+    end
+  end
   resources :notebooks do
     collection do
       get :available_notebooks
