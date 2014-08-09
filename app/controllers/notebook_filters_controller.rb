@@ -21,7 +21,7 @@ class NotebookFiltersController < ApplicationController
   def create
     @notebook_filter = NotebookFilter.new(params[:notebook_filter])
     @notebook_filter.save
-    redirect_to @notebook_filter, notice: 'Notebook filter was successfully created.'
+    redirect_to notebook_filters_path, notice: 'Notebook filter was successfully created.'
   end
 
   def update
