@@ -5,10 +5,7 @@ class NotebookFiltersController < ApplicationController
   def read_complete_content
     html_content = params[:html_content]
 
-    File.open 'tmp/result', 'w' do |file|
-      file.write html_content
-    end
-    ParseHelper.parse(html_content)
+    parser = HtmlParser.new(html_content)
 
     render :json => {:result => 'success', :size => html_content.size }
   end
