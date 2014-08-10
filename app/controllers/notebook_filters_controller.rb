@@ -4,10 +4,13 @@ class NotebookFiltersController < ApplicationController
 
   def read_complete_content
     html_content = params[:html_content]
-
     parser = HtmlParser.new(html_content)
-
-    render :json => {:result => 'success', :size => html_content.size }
+    urls_to_open = parser.get_urls NotebookFilter.all
+    render :json => {
+      :result => 'success',
+      :size => html_content.size,
+      :urls => urls_to_open
+    }
   end
 
   def index
