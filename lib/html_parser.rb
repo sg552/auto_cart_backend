@@ -18,13 +18,13 @@ class HtmlParser
       set_real_price @price_table, notebook
 
       @add_to_cart_button = price_table.css('img[alt="Add to cart"]')
-      set_add_to_car_url @add_to_cart_button, notebook
+      set_add_to_cart_url @add_to_cart_button, notebook
 
       notebooks << notebook
     end
   end
 
-  def set_add_to_car_url add_to_cart_button, notebook
+  def set_add_to_cart_url add_to_cart_button, notebook
     onclick_link = add_to_cart_button.first["onclick"]
     result = 'http:' + onclick_link.match(/'.*'/)[0].to_s.gsub("'", '')
     notebook.add_to_cart_link = result
