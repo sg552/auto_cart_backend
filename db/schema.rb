@@ -1,4 +1,4 @@
-# encoding: UTF-8
+# -*- encoding : utf-8 -*-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140809031417) do
+ActiveRecord::Schema.define(:version => 20140810034353) do
 
   create_table "global_settings", :force => true do |t|
     t.string   "name"
@@ -33,8 +33,14 @@ ActiveRecord::Schema.define(:version => 20140809031417) do
 
   create_table "notebooks", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "real_price",       :default => ""
+    t.string   "cpu",              :default => ""
+    t.string   "screen",           :default => ""
+    t.string   "harddisk",         :default => ""
+    t.string   "add_to_cart_link", :default => ""
+    t.string   "created_by",       :default => ""
   end
 
 end

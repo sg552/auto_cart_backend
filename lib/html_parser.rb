@@ -1,5 +1,5 @@
+# -*- encoding : utf-8 -*-
 require 'nokogiri'
-require 'notebook'
 class HtmlParser
   attr_accessor :page, :details_table, :price_table, :add_to_cart_button, :notebooks
   def initialize html_content

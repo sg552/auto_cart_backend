@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'html_parser'
 describe HtmlParser do
 
@@ -7,12 +8,10 @@ describe HtmlParser do
   end
 
   it 'should get details_table' do
-    puts "====== details_table : #{@parser.details_table}"
     @parser.details_table.to_s.include?('<span class="itemDescription">Lenovo Lynx K3011</span>').
       should == true
   end
   it 'should get price_table' do
-    puts "====== price_table : #{@parser.price_table}"
     @parser.price_table.to_s.include?('<span class="strikeprice">$640.00</span><br><span class="price">$190.40</span>').
       should == true
   end
