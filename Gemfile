@@ -14,4 +14,6 @@ end
 group :development, :test do
   gem 'capistrano', '2.12.0'
   gem 'capistrano-rbenv', '1.0.1'
+  gem 'rspec-rails', '~> 3.0.0'
 end
+
