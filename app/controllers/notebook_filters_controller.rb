@@ -38,7 +38,7 @@ class NotebookFiltersController < ApplicationController
 
   def update
     @notebook_filter.update_attributes(params[:notebook_filter])
-    redirect_to @notebook_filter, notice: 'Notebook filter was successfully updated.'
+    redirect_to notebook_filters_path, notice: 'Notebook filter was successfully updated.'
   end
 
   def destroy
