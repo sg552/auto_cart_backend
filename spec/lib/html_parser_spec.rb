@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'html_parser'
 describe HtmlParser do
 
@@ -27,5 +26,10 @@ describe HtmlParser do
 
   it 'should set_attributes' do
     @parser.set_attributes(@parser.details_table, @notebook)
+  end
+
+  it 'should set_real_price' do
+    @parser.set_add_to_car_url @parser.add_to_cart_button, @notebook
+    @notebook.add_to_cart_link.should == 'http://outlet.lenovo.com/SEUILibrary/controller/e/outlet_us/LenovoPortal/en_US/config.workflow:ConfigureMtmAsItem?mtm-item=:000001BD:0000F467:&action=addtocart'
   end
 end
