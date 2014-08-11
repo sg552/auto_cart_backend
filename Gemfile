@@ -6,6 +6,7 @@ gem 'thin', '1.6.2'
 gem 'jquery-rails', '3.1.1'
 gem 'nokogiri', '1.6.2.1'
 gem 'log4r', '1.1.9'
+gem 'activerecord-import', '0.3.1'
 
 group :assets do
   gem 'therubyracer', :platforms => :ruby

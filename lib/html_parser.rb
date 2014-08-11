@@ -23,10 +23,9 @@ class HtmlParser
 
       @add_to_cart_button = price_table.css('img[alt="Add to cart"]')
       set_add_to_cart_url @add_to_cart_button, notebook
-      notebook.save
-
       @notebooks << notebook
     end
+    Notebook.import @notebooks
   end
 
   # 核心方法, 用法见rspec
@@ -69,6 +68,7 @@ class HtmlParser
   end
 
   def set_attributes details_table, notebook
+    logger.info "===  set_attributes: "
     ul_element_of_details = details_table.css('ul.std-bullet-list')
     begin
       notebook.cpu = ul_element_of_details.css('li').first.text
@@ -83,5 +83,8 @@ class HtmlParser
       notebook.screen = ul_element_of_details.css('li').try(:[], 2).text
       notebook.harddisk = ul_element_of_details.css('li').try(:[], 5).text
     end
+  end
+  def logger
+    Rails.logger
   end
 end
