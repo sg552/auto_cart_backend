@@ -49,4 +49,9 @@ describe HtmlParser do
         "http://outlet.lenovo.com/SEUILibrary/controller/e/outlet_us/LenovoPortal/en_US/config.workflow:ConfigureMtmAsItem?mtm-item=:000001BD:00015C0E:&action=addtocart"
       ]
   end
+
+  it 'should get_content_with_pure_html' do
+    @parser.send :get_content_with_pure_html, File.read('spec/fixtures/small_result.html')
+    @parser.send :get_content_with_pure_html, File.read('spec/fixtures/small_result.html')
+  end
 end

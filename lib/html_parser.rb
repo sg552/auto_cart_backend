@@ -7,7 +7,7 @@ class HtmlParser
   def initialize html_content, options = {}
 
     @parser_id = Time.now.to_s
-    @page = Nokogiri::HTML(html_content)
+    @page = get_content_with_pure_html html_content
     item_descriptions = @page.css('.itemDescription')
     @notebooks = []
     item_descriptions.each_with_index do |item, i|
@@ -48,6 +48,15 @@ class HtmlParser
   end
 
   private
+
+  def get_content_with_pure_html html_content
+    temp_html = Nokogiri::HTML(html_content)
+    puts "before remove, html_content: #{html_content.size}"
+    temp_html.css('script').remove
+    temp_html.css('style').remove
+    puts "after remove , html_content : #{temp_html.to_s.size}"
+    temp_html
+  end
   def set_add_to_cart_url add_to_cart_button, notebook
     onclick_link = add_to_cart_button.first["onclick"]
     result = 'http:' + onclick_link.match(/'.*'/)[0].to_s.gsub("'", '')
