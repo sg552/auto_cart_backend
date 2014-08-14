@@ -10,7 +10,8 @@ class HtmlParser
     @page = get_content_with_pure_html html_content
     item_descriptions = @page.css('.itemDescription')
     @notebooks = []
-    puts "item_descriptions: #{item_descriptions.size}"
+    logger.info "== items : #{item_descriptions.size}"
+    logger.info "== before analysing... "
     item_descriptions.each_with_index do |item, i|
       return if options[:max_item].present? && i == options[:max_item]
       notebook = Notebook.new :created_by => @parser_id
@@ -29,6 +30,7 @@ class HtmlParser
       @notebooks << notebook
     end
     Notebook.import @notebooks
+    logger.info "== after analysing... "
   end
 
   # 核心方法, 用法见rspec
