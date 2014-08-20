@@ -73,7 +73,7 @@ class HtmlParser
 
   def set_real_price price_table, notebook
     result = price_table.css('.price').first
-    notebook.real_price = result.text.sub '$', ''
+    notebook.real_price = result.text.sub('$', '').sub(',', '')
   end
 
   def set_attributes details_table, notebook
