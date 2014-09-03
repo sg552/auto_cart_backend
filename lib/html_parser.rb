@@ -48,7 +48,7 @@ class HtmlParser
       end
       result += notebooks.map(&:add_to_cart_link)
     end
-    result.uniq
+    result.uniq.first GlobalSetting.find_by_name("count_to_buy").value.to_i
   end
 
   private
